@@ -77,7 +77,7 @@ Nos comprometemos a:
 - Auditoría de dependencias semanal
 - Actualizaciones automáticas vía Dependabot
 - Vulnerabilidades críticas y altas bloquean el merge
-- Checklist de seguridad en toda revisión que toque datos o autenticación
+- Checklist de seguridad en toda revisión que toque el formulario o los datos de contacto
 
 ## Para agentes de IA
 

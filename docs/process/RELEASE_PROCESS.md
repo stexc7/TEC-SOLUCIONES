@@ -43,7 +43,7 @@ MAJOR.MINOR.PATCH
 ### 4. Etiquetar
 
 ```bash
-git tag -a v1.2.0 -m "Exportación CSV y correcciones de autenticación"
+git tag -a v1.2.0 -m "Mejoras del catálogo y formulario de contacto"
 git push origin v1.2.0
 ```
 
@@ -105,8 +105,8 @@ git revert <sha>
 git push origin main
 ```
 
-**Cuidado con las migraciones de base de datos:** una migración aplicada no se
-deshace sola. Por eso toda migración lleva su `down` probado. Ver `.agents/data.md`.
+**Cuidado con el contenido publicado:** confirma los enlaces de contacto y el
+formulario antes de marcar una versión como lista.
 
 ## Release de emergencia (hotfix)
 

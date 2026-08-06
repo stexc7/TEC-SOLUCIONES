@@ -7,29 +7,36 @@
 
 ## Nombre
 
-`<nombre del proyecto>`
+`TEC-SOLUCIONES`
 
 ## En una frase
 
-<Qué hace, para quién. Una sola frase. Si necesitas dos, todavía no lo tienes claro.>
+Sitio web para el emprendimiento TEC-SOLUCIONES donde particulares encuentran y contactan servicios de tecnología: reparación, mantenimiento y optimización de equipos, venta de equipos y desarrollo de software (creación de páginas web).
 
 ## Problema que resuelve
 
-<Qué duele hoy sin este software. Sé concreto.>
+Hoy el negocio no tiene presencia online: los clientes no pueden ver el catálogo de servicios ni de equipos, ni encontrar una forma clara de contactar para pedir una reparación, un mantenimiento o una web. La página centraliza esa información y ofrece un canal de contacto directo.
 
 ## Usuarios
 
 | Perfil | Qué necesita | Qué le frustra hoy |
 |--------|--------------|--------------------|
-| | | |
+| Particular con un equipo dañado o lento | Ver qué servicios de reparación/mantenimiento se ofrecen y cómo pedir cita | No sabe si TEC-SOLUCIONES resuelve su problema ni cómo contactar |
+| Particular que quiere comprar un equipo | Ver equipos disponibles y precios de referencia | No hay catálogo visible, tiene que preguntar todo por mensaje |
+| Particular que necesita una web propia | Ver que se ofrece creación de páginas y pedir presupuesto | No sabe que este servicio existe dentro del negocio |
 
 ## Alcance
 
 **Dentro:**
-- 
+- Landing/sitio informativo con catálogo de servicios: reparación de equipos, mantenimiento, optimización.
+- Catálogo informativo de venta de equipos (sin carrito ni pago online).
+- Sección de soluciones de software (creación de páginas web).
+- Formulario o enlaces de contacto (WhatsApp, teléfono, email) para que el cliente inicie la conversación.
 
 **Fuera (explícitamente):**
-- 
+- Tienda online con carrito de compra y pasarela de pago.
+- Panel de administración / backoffice para gestionar pedidos.
+- Autenticación de usuarios o áreas privadas de cliente.
 
 > La lista de "fuera" es tan importante como la de "dentro". Evita que las IAs
 > construyan cosas que nadie pidió.
@@ -38,12 +45,13 @@
 
 Cómo sabremos que esto funcionó. Métricas, no opiniones.
 
-- [ ] 
-- [ ] 
+- [ ] La página lista todos los servicios (reparación, mantenimiento, optimización, venta de equipos, desarrollo web) con al menos una descripción breve cada uno.
+- [ ] Un visitante puede contactar (WhatsApp/teléfono/email/formulario) en máximo 2 clics desde cualquier página.
+- [ ] El sitio es usable y legible en móvil, que es el dispositivo principal de los usuarios objetivo.
 
 ## Estado actual
 
-`idea` | `prototipo` | `MVP` | `producción` | `mantenimiento`
+`idea`
 
 ## Stack
 
@@ -51,10 +59,10 @@ Ver [`STACK.md`](STACK.md).
 
 ## Restricciones
 
-- **Presupuesto:** 
-- **Plazo:** 
-- **Técnicas:** <p.ej. debe correr on-premise, sin cloud>
-- **Legales / cumplimiento:** <p.ej. datos personales, GDPR, facturación electrónica>
+- **Presupuesto:** por definir
+- **Plazo:** por definir
+- **Técnicas:** ninguna restricción conocida; se prioriza el lanzamiento rápido con infraestructura mínima/económica
+- **Legales / cumplimiento:** por definir (revisar si se recogen datos personales en el formulario de contacto)
 
 ## Enlaces
 

@@ -23,7 +23,6 @@ Cómo se escribe y se revisa el código aquí.
 | [`CODE_REVIEW_CHECKLIST.md`](standards/CODE_REVIEW_CHECKLIST.md) | Qué mirar al revisar |
 | [`TESTING_STRATEGY.md`](standards/TESTING_STRATEGY.md) | Qué tipo de test escribir y cuándo |
 | [`SECURITY_CHECKLIST.md`](standards/SECURITY_CHECKLIST.md) | Repaso de seguridad antes de cerrar |
-| [`API_DESIGN.md`](standards/API_DESIGN.md) | Convenciones de la API |
 | [`LOGGING_OBSERVABILITY.md`](standards/LOGGING_OBSERVABILITY.md) | Logs, métricas, alertas |
 
 ## Proceso — [`process/`](process/)

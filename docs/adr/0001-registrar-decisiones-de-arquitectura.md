@@ -10,7 +10,7 @@
 ## Contexto
 
 Un proyecto acumula decisiones. Algunas son evidentes al leer el código; otras no
-dejan rastro. Seis meses después, nadie recuerda por qué se eligió una base de datos
+dejan rastro. Seis meses después, nadie recuerda por qué se eligió una tecnología
 sobre otra, ni qué alternativas se descartaron, ni qué restricción obligaba a hacerlo
 así.
 

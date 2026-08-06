@@ -31,13 +31,12 @@ demasiado y fallará por razones equivocadas.
 - Lógica de negocio pura
 - Cálculos, transformaciones, validaciones
 - Casos límite y manejo de errores
-- **Sin** base de datos, sin red, sin sistema de archivos
+- **Sin** red ni sistema de archivos
 
 ### Integración
-- Endpoints de API completos (petición → respuesta)
-- Repositorios contra base de datos real (no *mock*)
-- Transacciones y *rollback*
-- Autenticación y autorización
+- Integración del formulario con Formspree en un entorno controlado
+- Enlaces directos de WhatsApp, teléfono y correo
+- Generación estática de páginas y contenido
 
 ### E2E
 Solo los caminos que, si se rompen, el negocio para:
@@ -102,7 +101,7 @@ expect(result).toBe(21.00);
 ## Mocks
 
 **Mockea:** servicios externos, tiempo, aleatoriedad, sistema de archivos, red.
-**No mockees:** tu propia base de datos en tests de integración, tu propia lógica.
+**No mockees:** tu propia lógica ni el contenido estático que renderiza el sitio.
 
 Regla: si mockeas tanto que el test no prueba nada real, borra el test.
 

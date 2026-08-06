@@ -7,7 +7,7 @@
     rellena título y fecha, y añade la fila al índice del README.
 
 .EXAMPLE
-    pwsh scripts/new-adr.ps1 "Usar PostgreSQL como base de datos principal"
+    pwsh scripts/new-adr.ps1 "Usar Astro para generar el sitio estático"
 #>
 
 [CmdletBinding()]

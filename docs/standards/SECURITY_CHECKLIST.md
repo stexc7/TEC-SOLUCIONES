@@ -1,6 +1,6 @@
 # Checklist de seguridad
 
-> Se repasa antes de cerrar cualquier cambio que toque autenticación, datos de
+> Se repasa antes de cerrar cualquier cambio que toque datos de
 > usuario, dinero o entradas externas.
 >
 > El contexto de qué es sensible **en este proyecto** está en `.ai/SECURITY.md`.
@@ -37,16 +37,11 @@ GET /api/invoices/1043     ← usuario A pidiendo la de usuario B
 - [ ] Si hay HTML de usuario, se sanea con una librería probada (lista blanca)
 - [ ] Content-Security-Policy configurada
 
-## 4. Autenticación
+## 4. Formulario y contacto
 
-- [ ] Contraseñas con hash lento y con sal (`argon2`, `bcrypt`, `scrypt`)
-- [ ] **Nunca** MD5 ni SHA1 para contraseñas
-- [ ] Límite de intentos de login
-- [ ] Los tokens caducan y se puede revocarlos
-- [ ] El refresh de token valida la expiración, no solo la firma
-- [ ] Cierre de sesión invalida el token en el servidor
-- [ ] Comparación de secretos en tiempo constante
-- [ ] Cookies con `HttpOnly`, `Secure`, `SameSite`
+- [ ] El formulario solicita únicamente los datos necesarios para responder.
+- [ ] El proveedor de formulario aplica protección anti-spam adecuada.
+- [ ] Los enlaces de contacto llevan a los destinos configurados.
 
 ## 5. Secretos
 
@@ -59,7 +54,7 @@ GET /api/invoices/1043     ← usuario A pidiendo la de usuario B
 
 ## 6. Validación de entrada
 
-- [ ] Validada **en el servidor**, siempre
+- [ ] Validada por el proveedor del formulario y en el cliente para mejorar la experiencia
 - [ ] Tipo, rango, longitud máxima, formato
 - [ ] Lista blanca, no lista negra
 - [ ] Tamaño máximo de cuerpo de petición
@@ -68,18 +63,15 @@ GET /api/invoices/1043     ← usuario A pidiendo la de usuario B
 
 ## 7. Exposición de datos
 
-- [ ] La API devuelve DTOs, no entidades completas
-- [ ] Sin hashes de contraseña, tokens internos ni IDs de otros usuarios en respuestas
+- [ ] Sin claves privadas, tokens internos ni datos personales innecesarios en el navegador
 - [ ] Errores en producción sin traza de pila
 - [ ] Sin PII en logs (correo, teléfono, documento, dirección, tarjeta)
 - [ ] Sin PII en URLs ni parámetros de consulta
 
 ## 8. Límite de tasa
 
-- [ ] Login, registro, recuperación de contraseña
-- [ ] Envío de correo o SMS
-- [ ] Endpoints computacionalmente caros
-- [ ] API pública en general
+- [ ] Envío del formulario de contacto
+- [ ] Cualquier servicio externo que reciba entradas públicas
 
 ## 9. Criptografía
 

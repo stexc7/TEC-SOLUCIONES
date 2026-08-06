@@ -75,7 +75,7 @@ Estas cuatro tareas ya están en [`.ai/TASKS.md`](.ai/TASKS.md) como `TASK-001` 
 - `.github/CODEOWNERS` → sustituye `@stexc7` por tu usuario
 - `.github/ISSUE_TEMPLATE/config.yml` → sustituye `stexc7/ai-project-starter`
 - `SECURITY.md` → pon tu correo de contacto
-- Borra `backend/` o `frontend/` si no aplican
+- Revisa `.ai/STACK.md` antes de iniciar la implementación
 
 **Activa el Dependency graph** en *Settings → Security → Code security*. Sin él,
 `dependency-review-action` no puede funcionar. Viene marcado como no bloqueante
@@ -126,7 +126,7 @@ comunes y checklist de cierre de tarea. Lo lee toda IA antes de escribir código
 Nueve perfiles, cada uno con su alcance, sus entregables y lo que tiene **prohibido**
 tocar:
 
-`architect` · `backend` · `frontend` · `reviewer` · `qa` · `devops` · `security` · `data` · `docs-writer`
+`architect` · `frontend` · `reviewer` · `qa` · `devops` · `security` · `docs-writer`
 
 > "Adopta el rol de `.agents/reviewer.md` y revisa el diff de esta rama."
 
@@ -160,7 +160,7 @@ cinco, la respuesta sale genérica.
 ### `scripts/`
 
 ```bash
-pwsh scripts/new-adr.ps1 "Usar PostgreSQL como base de datos principal"
+pwsh scripts/new-adr.ps1 "Usar Astro para generar el sitio estático"
 pwsh scripts/check-context.ps1
 ```
 
@@ -224,7 +224,7 @@ Esta plantilla es un punto de partida, no un dogma.
 - **Trabajas solo:** quédate con `.ai/`, `.agents/`, `.prompts/`, el *Definition of
   Done* y los estándares de código. Borra `docs/process/`.
 - **No usas Scrum:** borra `docs/process/SCRUM.md` y las plantillas de sprint.
-- **No es un proyecto web:** borra `backend/`, `frontend/` y `API_DESIGN.md`.
+- **No es un proyecto web:** borra `frontend/` y la documentación específica del sitio.
 - **Necesitas más roles:** añade archivos a `.agents/` con la misma estructura.
 
 **Lo único que no deberías quitar:** `AGENTS.md`, `.ai/RULES.md`, `.ai/AI_MEMORY.md`

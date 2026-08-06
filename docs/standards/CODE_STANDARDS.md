@@ -60,8 +60,8 @@ function process(order) {
 ```
 
 - **Devuelve pronto.** Un `return` temprano es más claro que un `else` largo.
-- **Sin efectos secundarios ocultos.** Si una función llamada `getUser()` además
-  escribe en la base de datos, el nombre miente.
+- **Sin efectos secundarios ocultos.** Si una función llamada `getService()` además
+  modifica el contenido del catálogo, el nombre miente.
 
 ## Comentarios
 
@@ -115,7 +115,7 @@ throw new ValidationError(`El campo 'email' no tiene formato válido: ${maskedVa
 - Tipado estricto donde el lenguaje lo permita.
 - **Prohibido `any`** (o equivalente) para salir del paso. Si no sabes el tipo,
   averígualo.
-- Tipos en los límites: entrada de API, respuesta de API, esquema de BD.
+- Tipos en los límites: contenido estático, variables públicas y datos del formulario.
 
 ## Imports
 

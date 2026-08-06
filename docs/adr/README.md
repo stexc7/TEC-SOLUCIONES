@@ -33,7 +33,7 @@ de estilo. Eso va a `.ai/DECISIONS.md`, o a ningún sitio.
 O usa el script:
 
 ```bash
-pwsh scripts/new-adr.ps1 "Usar PostgreSQL como base de datos principal"
+pwsh scripts/new-adr.ps1 "Usar Astro para generar el sitio estático"
 ```
 
 ## Reglas

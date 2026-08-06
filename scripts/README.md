@@ -17,11 +17,11 @@ PowerShell Core; los `.sh` en Linux, macOS y Git Bash.
 **Crear un ADR:**
 
 ```bash
-pwsh scripts/new-adr.ps1 "Usar PostgreSQL como base de datos principal"
+pwsh scripts/new-adr.ps1 "Usar Astro para generar el sitio estático"
 ```
 
 ```bash
-./scripts/new-adr.sh "Usar PostgreSQL como base de datos principal"
+./scripts/new-adr.sh "Usar Astro para generar el sitio estático"
 ```
 
 **Verificar el contexto antes de abrir un PR:**
@@ -42,8 +42,6 @@ Según el proyecto:
 | Script | Para qué |
 |--------|----------|
 | `setup` | Del clon a entorno funcionando en un comando |
-| `seed` | Poblar la base de datos de desarrollo |
-| `db-reset` | Recrear la BD local desde cero |
 | `check-all` | Lint + tipos + tests, lo mismo que el CI, en local |
 | `release` | Automatizar los pasos de `docs/process/RELEASE_PROCESS.md` |
 

@@ -24,7 +24,7 @@ Claude Code suele encargarse en este proyecto de:
 En `.agents/` hay perfiles de rol que puedes adoptar o delegar. Cada uno define su
 alcance, sus entregables y lo que tiene prohibido tocar:
 
-`architect` · `backend` · `frontend` · `reviewer` · `qa` · `devops` · `security` · `data` · `docs-writer`
+`architect` · `frontend` · `reviewer` · `qa` · `devops` · `security` · `docs-writer`
 
 ### Prompts reutilizables
 

@@ -42,6 +42,30 @@ consolida: fusiona entradas repetidas, borra lo que ya no aplica.
 
 ## Entradas
 
+### 2026-08-06 — Plantilla alineada con el sitio estático
+**Agente:** Zoo Code
+**Contexto:** Tras definir el stack, se eliminaron los artefactos de la plantilla que suponían servicios de servidor.
+**Aprendido:** No existe directorio `backend/`, rol de backend/datos, guía de API ni configuración de entorno privada. [`.env.example`](../.env.example) contiene únicamente las cuatro variables públicas de contacto: Formspree, WhatsApp, teléfono y correo. Los runbooks y la documentación de frontend describen el despliegue estático en Cloudflare Pages.
+**Aplicar cuando:** Implementar el sitio solo en `frontend/`; no introducir una API, una base de datos ni cuentas de usuario sin una decisión y tarea nuevas.
+
+### 2026-08-06 — TASK-002 cerrada: stack estático confirmado
+**Agente:** Zoo Code
+**Contexto:** Se eligió la tecnología base para el sitio informativo de
+TEC-SOLUCIONES.
+**Aprendido:** El sitio usará Astro 5, TypeScript y CSS nativo, compilado como
+estático y alojado en Cloudflare Pages. No habrá backend, API, base de datos,
+autenticación ni e-commerce. WhatsApp, teléfono y correo son canales de contacto
+directos; el formulario se procesa mediante Formspree y requiere configurar su
+identificador público durante la implementación.
+**Aplicar cuando:** TASK-003 debe describir una arquitectura estática. TASK-004
+debe validar Node.js 22 y la compilación `npm run build` desde `frontend/`.
+
+### 2026-08-06 — TASK-001 cerrada: PROJECT.md relleno
+**Agente:** Claude Code
+**Contexto:** Primera sesión real del proyecto. El repo era el scaffold `ai-project-starter` sin datos concretos.
+**Aprendido:** TEC-SOLUCIONES es un sitio web informativo/catálogo (no e-commerce) para un emprendimiento de servicios de tecnología: reparación, mantenimiento, optimización, venta de equipos y creación de páginas web. Usuarios objetivo: particulares. Sin carrito/pago online ni panel admin — el contacto se hace por WhatsApp/teléfono/email/formulario. Presupuesto, plazo y temas legales quedaron "por definir", el humano no los ha concretado aún.
+**Aplicar cuando:** Al proponer stack (TASK-002) o arquitectura (TASK-003): priorizar algo simple, estático/ligero y económico, orientado a móvil, sin backend de e-commerce.
+
 ### AAAA-MM-DD — Plantilla inicial del proyecto
 **Agente:** —
 **Contexto:** Creación del repositorio a partir de `ai-project-starter`.

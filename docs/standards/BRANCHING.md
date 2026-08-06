@@ -104,7 +104,7 @@ Después del hotfix:
 ## Etiquetas de versión
 
 ```bash
-git tag -a v1.2.0 -m "Exportación CSV y correcciones de autenticación"
+git tag -a v1.2.0 -m "Mejoras del catálogo y formulario de contacto"
 git push origin v1.2.0
 ```
 

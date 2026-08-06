@@ -16,8 +16,8 @@ Si solo recuerdas esto, ya vas bien:
    se corrige en 30 segundos; una implementación mala, en dos horas.
 3. **Una tarea a la vez.** La de [`.ai/CURRENT_TASK.md`](../../.ai/CURRENT_TASK.md).
    Si le das tres cosas, hará las tres a medias.
-4. **Dile qué archivos mirar.** "Lee `backend/src/domain/Invoice.ts`" funciona
-   mucho mejor que "busca dónde está la lógica de facturas".
+4. **Dile qué archivos mirar.** "Lee `frontend/src/pages/index.astro`" funciona
+   mucho mejor que "busca dónde está el contenido de inicio".
 5. **Al terminar, que escriba en [`.ai/AI_MEMORY.md`](../../.ai/AI_MEMORY.md).**
    Es lo único que evita que mañana empieces desde cero otra vez.
 
@@ -126,8 +126,7 @@ ahorrar es el error caro.** Dale toda la información y haz que planifique.
 
 Aunque la IA lo haga bien el 95 % de las veces, aquí el 5 % restante duele:
 
-- Migraciones de base de datos que borran o transforman datos
-- Cambios en autenticación o permisos
+- Cambios en los datos de contacto o en la configuración de Formspree
 - Configuración de producción
 - Cualquier cosa que mueva dinero
 - Cambios en [`.ai/RULES.md`](../../.ai/RULES.md) o [`.ai/SECURITY.md`](../../.ai/SECURITY.md)

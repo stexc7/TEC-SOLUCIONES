@@ -52,7 +52,7 @@ foreach ($rel in $required) {
 $placeholders = @{
     '.ai/PROJECT.md'      = '<nombre del proyecto>'
     '.ai/CURRENT_TASK.md' = 'TASK-000'
-    '.ai/STACK.md'        = '| Lenguaje (backend) | | | |'
+    '.ai/STACK.md'        = '<runtime>  <versión mínima>'
 }
 
 foreach ($rel in $placeholders.Keys) {

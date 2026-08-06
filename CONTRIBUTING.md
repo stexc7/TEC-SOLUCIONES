@@ -97,8 +97,7 @@ Usa [`.prompts/onboard.md`](.prompts/onboard.md) para cargar el contexto.
 
 ### Qué NO delegar a una IA sin supervisión estrecha
 
-- Migraciones de base de datos que destruyen datos.
-- Cambios en autenticación o autorización.
+- Cambios en la configuración de contacto o en Formspree.
 - Configuración de infraestructura de producción.
 - Cualquier cosa que mueva dinero.
 - Cambios en `.ai/RULES.md` o `.ai/SECURITY.md`.

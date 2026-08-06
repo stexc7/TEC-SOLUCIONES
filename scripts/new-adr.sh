@@ -3,7 +3,7 @@
 # Crea un nuevo ADR a partir de la plantilla.
 #
 # Uso:
-#   ./scripts/new-adr.sh "Usar PostgreSQL como base de datos principal"
+#   ./scripts/new-adr.sh "Usar Astro para generar el sitio estático"
 
 set -euo pipefail
 

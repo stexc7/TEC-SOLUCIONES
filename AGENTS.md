@@ -78,5 +78,5 @@ Si no actualizaste nada de esto, la siguiente sesión empieza a ciegas.
 - Borrar tests para que el build pase.
 - Añadir dependencias sin registrarlo en `.ai/DECISIONS.md`.
 - Hacer `push --force` sobre `main`.
-- Commitear archivos `.env`, claves, tokens o volcados de base de datos.
+- Commitear archivos `.env`, claves o tokens.
 - Cambiar la configuración de CI/CD sin avisar al humano.

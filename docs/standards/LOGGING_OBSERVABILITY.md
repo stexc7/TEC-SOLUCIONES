@@ -118,8 +118,8 @@ GET /health        → ¿el proceso está vivo?
 GET /health/ready  → ¿puede atender tráfico? (BD, dependencias)
 ```
 
-`/health` debe ser barato: si consulta la base de datos, tumbará la base de datos
-cuando el balanceador lo llame cada segundo.
+Las comprobaciones de disponibilidad deben ser ligeras para no degradar la entrega
+del sitio estático.
 
 ## Checklist
 

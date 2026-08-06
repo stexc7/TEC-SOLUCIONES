@@ -2,7 +2,7 @@
 
 Tests que **cruzan capas**: end-to-end, integración amplia, pruebas de carga.
 
-> Los tests unitarios viven junto al código que prueban (`backend/src/.../*.test.*`),
+> Los tests unitarios viven junto al código que prueban (`frontend/src/.../*.test.*`),
 > no aquí. Esta carpeta es solo para lo que no pertenece a un módulo concreto.
 
 ---
