@@ -1,0 +1,37 @@
+# CODEOWNERS
+#
+# Quién revisa qué. GitHub asigna estos revisores automáticamente en cada PR.
+# La ÚLTIMA regla que coincide con un archivo es la que manda.
+#
+# Sustituye @stexc7 por tu usuario u organización al usar esta plantilla.
+
+# Por defecto
+*                           @stexc7
+
+# ── Contexto de IA ──
+# Cambiar las reglas afecta a cómo trabajan las tres IAs. Merece revisión.
+/AGENTS.md                  @stexc7
+/CLAUDE.md                  @stexc7
+/.ai/RULES.md               @stexc7
+/.ai/SECURITY.md            @stexc7
+/.agents/                   @stexc7
+/.prompts/                  @stexc7
+
+# ── Estándares y proceso ──
+/docs/standards/            @stexc7
+/docs/adr/                  @stexc7
+
+# ── Infraestructura ──
+/.github/                   @stexc7
+/.github/workflows/         @stexc7
+/scripts/                   @stexc7
+
+# ── Código ──
+# /backend/                 @stexc7
+# /frontend/                @stexc7
+# /backend/src/domain/      @stexc7
+
+# ── Archivos sensibles ──
+/LICENSE                    @stexc7
+/SECURITY.md                @stexc7
+/.gitignore                 @stexc7
