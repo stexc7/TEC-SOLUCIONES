@@ -4,7 +4,7 @@
 > Manténlo al día: una arquitectura documentada que ya no coincide con la realidad
 > es peor que no tener ninguna.
 
-**Última revisión:** `<AAAA-MM-DD>`
+**Última revisión:** `2026-08-06`
 
 ---
 
@@ -51,11 +51,23 @@ Romper una de estas reglas requiere un ADR que lo justifique.
 
 ## Flujos principales
 
-### Flujo: `<nombre>`
+### Flujo: Visitante navega el sitio
 
-1. 
-2. 
-3. 
+1. Astro genera el HTML de cada página en tiempo de compilación (`npm run build`), a partir del contenido estático en `frontend/src/content/`.
+2. Cloudflare Pages sirve esos archivos estáticos desde su CDN; no hay servidor de aplicación ni renderizado en cada petición.
+3. El visitante ve el catálogo de servicios y equipos y los enlaces de contacto (WhatsApp, teléfono, correo) sin llamadas a una API.
+
+### Flujo: Visitante envía el formulario de contacto
+
+1. El visitante rellena el formulario en el navegador; la validación de cliente solo mejora la experiencia (no es la validación de seguridad, porque no hay servidor propio que la aplique).
+2. El navegador envía la solicitud directamente al endpoint HTTPS de Formspree, identificado por `PUBLIC_FORMSPREE_FORM_ID`.
+3. Formspree procesa el mensaje y lo entrega al buzón configurado del negocio; el sitio no guarda ni reenvía esos datos.
+
+### Flujo: Despliegue a producción
+
+1. Se fusiona un pull request aprobado en `main`.
+2. GitHub Actions ejecuta el CI configurado sobre esa rama (validación previa a la publicación).
+3. Cloudflare Pages instala dependencias (`npm ci`), ejecuta `npm run build` desde `frontend/` y publica el contenido de `frontend/dist`.
 
 ## Puntos de integración externos
 
@@ -66,9 +78,9 @@ Romper una de estas reglas requiere un ADR que lo justifique.
 
 ## Rendimiento y escala
 
-- Carga esperada: 
-- Cuellos de botella conocidos: 
-- Estrategia de caché: 
+- Carga esperada: sitio informativo de bajo tráfico (catálogo + contacto), sin picos previstos por campañas o ventas online.
+- Cuellos de botella conocidos: ninguno identificado; al ser HTML estático servido por CDN, el sitio en sí no impone límites de escala propios. El formulario de contacto depende de los límites de plan de Formspree.
+- Estrategia de caché: gestionada por la CDN de Cloudflare Pages sobre los archivos estáticos generados en cada build; no hay caché de aplicación propia.
 
 ## Deuda técnica conocida
 
@@ -76,4 +88,4 @@ Romper una de estas reglas requiere un ADR que lo justifique.
 
 | Qué | Por qué existe | Impacto | Cuándo se paga |
 |-----|----------------|---------|----------------|
-| | | | |
+| Ninguna conocida a la fecha de esta revisión. | — | — | — |
