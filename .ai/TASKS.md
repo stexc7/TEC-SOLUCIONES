@@ -21,7 +21,6 @@
 
 | ID | Tarea | Prioridad | Estimación | Depende de |
 |----|-------|-----------|------------|------------|
-| TASK-003 | Dibujar la arquitectura en `.ai/ARCHITECTURE.md` | P0 | 1 h | TASK-002 |
 | TASK-004 | Adaptar el CI de `.github/workflows/ci.yml` al stack | P1 | 1 h | TASK-002 |
 
 ---
@@ -48,6 +47,7 @@
 
 | ID | Tarea | Cerrada | PR |
 |----|-------|---------|-----|
+| TASK-003 | Dibujar la arquitectura en `.ai/ARCHITECTURE.md` | 2026-08-07 | (pendiente de abrir) |
 | TASK-002 | Definir el stack en `.ai/STACK.md` | 2026-08-06 | — |
 | TASK-001 | Rellenar `.ai/PROJECT.md` con el proyecto real | 2026-08-06 | — |
 

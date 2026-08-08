@@ -9,41 +9,40 @@
 
 ## Tarea activa
 
-**ID:** `TASK-002`
-**Título:** Definir el stack en `.ai/STACK.md`
-**Estado:** `terminada`
-**Agente asignado:** `Zoo Code`
-**Rama:** `docs/task-002-definir-stack`
-**Iniciada:** `2026-08-06`
+**ID:** `TASK-004`
+**Título:** Adaptar el CI de `.github/workflows/ci.yml` al stack
+**Estado:** `pendiente`
+**Agente asignado:** `—`
+**Rama:** `—`
+**Iniciada:** `—`
 
 ### Objetivo
 
-Tener un stack tecnológico concreto elegido y documentado para TEC-SOLUCIONES, de forma que TASK-003 (arquitectura) y TASK-004 (CI) puedan apoyarse en él.
+Configurar `.github/workflows/ci.yml`, hoy un placeholder de plantilla, para que valide de verdad el stack real del proyecto (Astro + TypeScript + Vitest) en cada PR y en `main`.
 
 ### Criterios de aceptación
 
-- [x] `.ai/STACK.md` indica framework/generador de sitio, hosting y cómo se gestiona el formulario de contacto.
-- [x] La elección es coherente con `PROJECT.md`: sitio informativo + catálogo, sin carrito ni backend complejo, lanzamiento rápido y económico.
-- [x] Queda registrada la justificación (por qué ese stack y no otro) para poder anotarla en `DECISIONS.md` si tiene consecuencias relevantes.
+- [ ] `.github/workflows/ci.yml` descomenta/adapta el bloque Node.js de la plantilla (o lo reescribe) para instalar dependencias, ejecutar lint, comprobación de tipos, tests y build desde `frontend/`.
+- [ ] Se elimina el job `placeholder` que solo emite el aviso de "CI no configurado".
+- [ ] El pipeline completo corre en menos de 10 minutos.
+- [ ] El flujo de despliegue descrito en `.ai/ARCHITECTURE.md` (PR → CI → Cloudflare Pages) queda respaldado por un CI real.
 
 ### Archivos que se van a tocar
 
 ```
-.ai/STACK.md
+.github/workflows/ci.yml
 ```
 
 ### Enfoque
 
-1. Proponer un stack acorde a un sitio informativo/catálogo con formulario de contacto (p.ej. generador estático + hosting gratuito/económico).
-2. Confirmar la elección con el humano.
-3. Documentarlo en `.ai/STACK.md`.
+1. Revisar `.ai/STACK.md` para confirmar los comandos exactos (`npm ci`, lint, typecheck, test, build) una vez existan en `frontend/package.json`.
+2. Adaptar el bloque Node.js ya presente en la plantilla de `ci.yml`.
+3. Verificar que corre en un PR de prueba.
 
 ### Fuera de alcance en esta tarea
 
-- Implementar el sitio (eso es trabajo posterior a TASK-003/004).
-- Definir la arquitectura detallada (TASK-003).
-
-- 
+- Inicializar Astro o implementar páginas, componentes, estilos o contenido del sitio (si `frontend/` sigue sin `package.json`, esta tarea queda bloqueada hasta que exista).
+- Configurar el despliegue en Cloudflare Pages (lo gestiona Cloudflare directamente, no GitHub Actions).
 
 ---
 
@@ -53,8 +52,9 @@ Tener un stack tecnológico concreto elegido y documentado para TEC-SOLUCIONES, 
 
 | Paso | Estado | Nota |
 |------|--------|------|
-| 1. Proponer y confirmar el stack con el humano | Hecho | Astro + TypeScript + CSS nativo, Cloudflare Pages y Formspree aprobados. |
-| 2. Documentar el stack y la decisión | Hecho | Documentados en `.ai/STACK.md` y `.ai/DECISIONS.md`. |
+| 1. Confirmar que `frontend/` tiene `package.json` con scripts de lint/typecheck/test/build | Pendiente | — |
+| 2. Adaptar `ci.yml` | Pendiente | — |
+| 3. Verificar en un PR de prueba | Pendiente | — |
 
 ## Bloqueos
 
@@ -66,10 +66,10 @@ Tener un stack tecnológico concreto elegido y documentado para TEC-SOLUCIONES, 
 
 ## Al terminar
 
-- [x] Tests en verde (no aplican: tarea exclusivamente documental)
-- [x] `docs/standards/DEFINITION_OF_DONE.md` revisado para el alcance documental
+- [ ] Tests en verde
+- [ ] `docs/standards/DEFINITION_OF_DONE.md` revisado
 - [ ] `.ai/TASKS.md` actualizado (tarea movida a *Hecho*)
 - [ ] `.ai/AI_MEMORY.md` actualizado (qué aprendiste)
-- [x] `.ai/CHANGELOG.md` no actualizado (no hay cambio visible para usuarios)
+- [ ] `.ai/CHANGELOG.md` actualizado si el cambio es visible para usuarios
 - [ ] PR abierto con la plantilla de `.github/PULL_REQUEST_TEMPLATE.md`
 - [ ] **Este archivo reseteado** con la siguiente tarea de `TASKS.md`

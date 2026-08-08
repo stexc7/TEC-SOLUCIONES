@@ -42,6 +42,12 @@ consolida: fusiona entradas repetidas, borra lo que ya no aplica.
 
 ## Entradas
 
+### 2026-08-07 — TASK-003 cerrada: arquitectura documentada, `backend/` eliminada
+**Agente:** Claude Code
+**Contexto:** `.ai/ARCHITECTURE.md` ya tenía el diagrama, la estructura de carpetas, las reglas de dependencia y las integraciones externas desde el commit `273a384`, pero `CURRENT_TASK.md` (sin commitear, huérfano de una sesión anterior) marcaba TASK-003 como pendiente. Se revisó a fondo y se detectó que solo faltaban "Flujos principales" y "Rendimiento y escala" con placeholders vacíos.
+**Aprendido:** Se completaron los 3 flujos reales del sitio (navegación estática servida por Cloudflare Pages, envío del formulario a Formspree, y despliegue vía PR + CI + Cloudflare Pages) y la sección de rendimiento/escala. Además, la carpeta `backend/` existía vacía y sin trackear en git — era el resto de `backend/README.md`, borrado en `273a384` al adaptar la plantilla al stack estático, pero el directorio quedó huérfano en disco. Se eliminó por no tener uso (confirmado en `STACK.md`: "Backend o API propia: no se requiere").
+**Aplicar cuando:** Si vuelve a aparecer una carpeta vacía y no trackeada en el repo, comprobar primero si es un resto de una limpieza anterior en el historial de git antes de asumir que es trabajo en progreso.
+
 ### 2026-08-06 — Plantilla alineada con el sitio estático
 **Agente:** Zoo Code
 **Contexto:** Tras definir el stack, se eliminaron los artefactos de la plantilla que suponían servicios de servidor.
