@@ -11,8 +11,6 @@
 ## Vista general
 
 ```
-<Diagrama de bloques. ASCII está bien. Mermaid también.>
-
   Visitante ──▶ Cloudflare Pages ──▶ Sitio Astro estático
                                           │
                                           └──▶ Formspree (formulario de contacto)
@@ -31,7 +29,9 @@
 
 ```
 frontend/
+  public/          # Archivos servidos tal cual, sin procesar por Astro.
   src/
+    assets/        # Imágenes y recursos que Astro procesa y optimiza en el build.
     components/    # Componentes de presentación reutilizables.
     content/       # Datos estáticos del catálogo.
     layouts/       # Estructuras visuales compartidas.
@@ -46,6 +46,7 @@ frontend/
 - Las páginas y componentes pueden importar contenido estático y estilos.
 - El contenido no depende de servicios remotos para poder generar el sitio.
 - El formulario se comunica directamente con Formspree desde el navegador.
+- Las imágenes del catálogo (servicios, equipos) van en `src/assets/` y se importan desde el componente o página que las usa, para que Astro las optimice y las incluya en el build con hash de caché. Solo van en `public/` los archivos que deben conservar una ruta fija o no necesitan procesado: favicon, `robots.txt`, imágenes de redes sociales (Open Graph) referenciadas por URL absoluta.
 
 Romper una de estas reglas requiere un ADR que lo justifique.
 
