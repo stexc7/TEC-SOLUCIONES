@@ -47,7 +47,7 @@
 
 | ID | Tarea | Cerrada | PR |
 |----|-------|---------|-----|
-| TASK-003 | Dibujar la arquitectura en `.ai/ARCHITECTURE.md` | 2026-08-07 | (pendiente de abrir) |
+| TASK-003 | Dibujar la arquitectura en `.ai/ARCHITECTURE.md` | 2026-08-07 | [#2](https://github.com/stexc7/TEC-SOLUCIONES/pull/2) |
 | TASK-002 | Definir el stack en `.ai/STACK.md` | 2026-08-06 | — |
 | TASK-001 | Rellenar `.ai/PROJECT.md` con el proyecto real | 2026-08-06 | — |
 
@@ -60,4 +60,5 @@
 
 | Qué | Dónde | Detectado por | Fecha |
 |-----|-------|---------------|-------|
-| | | | |
+| `check-context.ps1` no excluye `frontend/node_modules/`: genera 80 avisos de "enlace roto" que son falsos positivos de READMEs de dependencias, no del proyecto. | `scripts/check-context.ps1` | Claude Code | 2026-08-08 |
+| Hay trabajo de inicialización de Astro ya comiteado y en remoto (rama `feat/inicializar-astro`, 2 commits) sin una tarea correspondiente en este archivo ni en `CURRENT_TASK.md`. Rompe la regla de "una tarea a la vez". | `frontend/` (rama `feat/inicializar-astro`) | Claude Code | 2026-08-08 |

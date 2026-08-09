@@ -52,15 +52,15 @@ Configurar `.github/workflows/ci.yml`, hoy un placeholder de plantilla, para que
 
 | Paso | Estado | Nota |
 |------|--------|------|
-| 1. Confirmar que `frontend/` tiene `package.json` con scripts de lint/typecheck/test/build | Pendiente | — |
-| 2. Adaptar `ci.yml` | Pendiente | — |
+| 1. Confirmar que `frontend/` tiene `package.json` con scripts de lint/typecheck/test/build | Parcial | `frontend/package.json` ya existe (rama `feat/inicializar-astro`, fuera de esta sesión) con `dev`/`build`/`preview`. Faltan `lint`, `typecheck` y `test`: no hay ESLint, TypeScript check ni Vitest instalados todavía, pese a que `.ai/STACK.md` los exige. |
+| 2. Adaptar `ci.yml` | Bloqueado | Depende del paso 1. |
 | 3. Verificar en un PR de prueba | Pendiente | — |
 
 ## Bloqueos
 
 | Qué bloquea | Quién lo desbloquea | Desde |
 |-------------|---------------------|-------|
-| | | |
+| Faltan scripts `lint`/`typecheck`/`test` en `frontend/package.json` (ESLint, TypeScript check y Vitest sin instalar) | Quien continúe la inicialización de Astro en `feat/inicializar-astro` (o una tarea nueva para ello) | 2026-08-08 |
 
 ---
 
