@@ -52,7 +52,7 @@ foreach ($rel in $required) {
 $placeholders = @{
     '.ai/PROJECT.md'      = '<nombre del proyecto>'
     '.ai/CURRENT_TASK.md' = 'TASK-000'
-    '.ai/STACK.md'        = '<runtime>  <versión mínima>'
+    '.ai/STACK.md'        = '| Lenguaje (backend) | | | |'
 }
 
 foreach ($rel in $placeholders.Keys) {
@@ -88,8 +88,13 @@ try {
 }
 
 # ── 5. Enlaces internos rotos ─────────────────────────────────────────────
+# Solo se revisa la documentación del proyecto. Las carpetas generadas o de
+# dependencias se excluyen: sus READMEs traen cientos de enlaces rotos que no
+# son responsabilidad nuestra y ahogan los avisos reales.
+$excluidas = '\\(\.git|node_modules|dist|build|out|coverage|\.astro|\.next|\.nuxt|\.svelte-kit|vendor|__pycache__|\.venv|venv)\\'
+
 $mdFiles = Get-ChildItem -Path $repoRoot -Filter '*.md' -Recurse -File |
-    Where-Object { $_.FullName -notmatch '\\\.git\\' }
+    Where-Object { $_.FullName -notmatch $excluidas }
 
 foreach ($file in $mdFiles) {
     $dir = $file.DirectoryName

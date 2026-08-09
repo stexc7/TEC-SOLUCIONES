@@ -11,10 +11,10 @@
 
 **ID:** `TASK-004`
 **Título:** Adaptar el CI de `.github/workflows/ci.yml` al stack
-**Estado:** `pendiente`
-**Agente asignado:** `—`
-**Rama:** `—`
-**Iniciada:** `—`
+**Estado:** `en revisión — código listo, CI sin confirmar en verde todavía`
+**Agente asignado:** `Claude Code`
+**Rama:** `ci/task-004-adaptar-workflow`
+**Iniciada:** `2026-08-09`
 
 ### Objetivo
 
@@ -22,10 +22,10 @@ Configurar `.github/workflows/ci.yml`, hoy un placeholder de plantilla, para que
 
 ### Criterios de aceptación
 
-- [ ] `.github/workflows/ci.yml` descomenta/adapta el bloque Node.js de la plantilla (o lo reescribe) para instalar dependencias, ejecutar lint, comprobación de tipos, tests y build desde `frontend/`.
-- [ ] Se elimina el job `placeholder` que solo emite el aviso de "CI no configurado".
-- [ ] El pipeline completo corre en menos de 10 minutos.
-- [ ] El flujo de despliegue descrito en `.ai/ARCHITECTURE.md` (PR → CI → Cloudflare Pages) queda respaldado por un CI real.
+- [x] `.github/workflows/ci.yml` adapta el bloque Node.js de la plantilla para instalar dependencias, ejecutar lint, formato, comprobación de tipos, tests y build desde `frontend/`.
+- [x] Se elimina el job `placeholder` (y los bloques comentados de otros stacks que no aplican).
+- [ ] El pipeline completo corre en menos de 10 minutos. **No verificado todavía**: no pude ejecutar `npm ci`/lint/test/build en local (Node.js no está en el PATH de este entorno) ni disparar el workflow real, porque no hay PR abierto (el trigger `pull_request` necesita uno) y no tengo `gh` ni un token para abrirlo.
+- [ ] El flujo de despliegue descrito en `.ai/ARCHITECTURE.md` queda respaldado por un CI real. **Pendiente de confirmar** en cuanto el PR dispare el primer run.
 
 ### Archivos que se van a tocar
 
@@ -52,24 +52,24 @@ Configurar `.github/workflows/ci.yml`, hoy un placeholder de plantilla, para que
 
 | Paso | Estado | Nota |
 |------|--------|------|
-| 1. Confirmar que `frontend/` tiene `package.json` con scripts de lint/typecheck/test/build | Pendiente | — |
-| 2. Adaptar `ci.yml` | Pendiente | — |
-| 3. Verificar en un PR de prueba | Pendiente | — |
+| 1. Confirmar que `frontend/` tiene `package.json` con scripts de lint/typecheck/test/build | Hecho | Ya estaban los 5 scripts (`lint`, `format`, `typecheck`, `test`, `build`) desde el commit `468d135`, fuera de esta sesión. |
+| 2. Adaptar `ci.yml` | Hecho | Job `node` reemplaza al `placeholder`; corre `npm ci` → lint → formato → tipos → tests → build con `working-directory: frontend`. Se omite `--coverage` (sin provider instalado, sin umbral en `TESTING.md`; anotado en `TASKS.md`). |
+| 3. Verificar en un PR de prueba | Pendiente | Rama `ci/task-004-adaptar-workflow` pusheada a `origin`. Falta abrir el PR (no hay `gh` ni token disponible en este entorno) para que el trigger `pull_request` dispare el primer run real. |
 
 ## Bloqueos
 
 | Qué bloquea | Quién lo desbloquea | Desde |
 |-------------|---------------------|-------|
-| | | |
+| Nadie ha abierto el PR de `ci/task-004-adaptar-workflow` todavía, así que el workflow nunca se ha ejecutado de verdad | El humano (abrir el PR manualmente o instalar `gh`) | 2026-08-09 |
 
 ---
 
 ## Al terminar
 
-- [ ] Tests en verde
-- [ ] `docs/standards/DEFINITION_OF_DONE.md` revisado
-- [ ] `.ai/TASKS.md` actualizado (tarea movida a *Hecho*)
-- [ ] `.ai/AI_MEMORY.md` actualizado (qué aprendiste)
-- [ ] `.ai/CHANGELOG.md` actualizado si el cambio es visible para usuarios
+- [ ] Tests en verde — **no confirmado**, ver nota en "Progreso"
+- [x] `docs/standards/DEFINITION_OF_DONE.md` revisado
+- [ ] `.ai/TASKS.md` actualizado (tarea movida a *Hecho*) — sigue en "En progreso" a propósito, hasta confirmar el CI
+- [x] `.ai/AI_MEMORY.md` actualizado (qué aprendiste)
+- [x] `.ai/CHANGELOG.md` no actualizado (sin cambio visible para usuarios del sitio)
 - [ ] PR abierto con la plantilla de `.github/PULL_REQUEST_TEMPLATE.md`
-- [ ] **Este archivo reseteado** con la siguiente tarea de `TASKS.md`
+- [ ] **Este archivo reseteado** — no, sigue siendo la tarea activa hasta confirmar el CI en verde

@@ -42,6 +42,18 @@ consolida: fusiona entradas repetidas, borra lo que ya no aplica.
 
 ## Entradas
 
+### 2026-08-09 — TASK-004: `ci.yml` adaptado, pendiente de confirmar en verde
+**Agente:** Claude Code
+**Contexto:** Al retomar, `feat/inicializar-astro` ya estaba mergeado (PR #3) y `frontend/package.json` ya traía `lint`/`format`/`typecheck`/`test`/`build` (ESLint, Prettier, Vitest, `astro check` — añadidos fuera de esta sesión en el commit `468d135`). Con eso, TASK-004 ya no estaba bloqueada.
+**Aprendido:** Se reemplazó el job `placeholder` de `.github/workflows/ci.yml` por un job `node` real (`working-directory: frontend`, `cache-dependency-path` al lockfile de `frontend/`, y los pasos install/lint/format/typecheck/test/build). Se omitió `--coverage` a propósito: no hay `@vitest/coverage-v8` instalado ni umbral en `.ai/TESTING.md` (que sigue con la plantilla sin rellenar). **No pude verificar que el pipeline corra en verde**: este entorno no tiene Node.js en el PATH (ni Bash ni PowerShell lo encuentran) para correr los comandos en local, y no hay `gh` ni token para abrir el PR y disparar el trigger `pull_request` de GitHub Actions. La rama `ci/task-004-adaptar-workflow` está pusheada a `origin` pero sin PR.
+**Aplicar cuando:** Antes de dar TASK-004 por cerrada, confirmar en GitHub que el run de "CI / Node.js" pasa y que tarda menos de 10 min. Si se repite la falta de `gh`/token en una sesión futura, avisar al humano de inmediato en vez de asumir que el CI pasará.
+
+### 2026-08-08 — Cierre de sesión: PR de TASK-003 mergeado, detectado trabajo de Astro sin tarea formal
+**Agente:** Claude Code
+**Contexto:** Sesión de cierre (`/cerrar`). El PR de TASK-003 (#2) ya estaba mergeado a `main` al retomar. Al revisar el estado real del repo, apareció una rama `feat/inicializar-astro` (2 commits: init de Astro + página de inicio) pushada a `origin`, con `frontend/package.json`, `astro.config.mjs`, `src/pages/index.astro` y carpetas base — trabajo hecho fuera de esta sesión de Claude Code, sin entrada en `TASKS.md` ni `CURRENT_TASK.md`.
+**Aprendido:** `frontend/package.json` solo trae los scripts `dev`/`build`/`preview`; **no** están instalados ESLint, TypeScript check ni Vitest, aunque `.ai/STACK.md` los exige como parte del stack. Eso bloquea TASK-004 (CI) hasta que se completen. También: `scripts/check-context.ps1` no excluye `frontend/node_modules/`, así que reporta ~80 falsos positivos de "enlace roto" que vienen de READMEs de dependencias — hay que filtrarlos a mano o arreglar el script antes de fiarse de su recuento.
+**Aplicar cuando:** Antes de empezar TASK-004, confirmar en qué rama sigue el trabajo de Astro (`feat/inicializar-astro`) y si hay que fusionarla o abrir una tarea formal para ella. No asumir que `check-context.ps1` está limpio solo por el número de avisos: filtrar `node_modules` primero.
+
 ### 2026-08-07 — TASK-003 cerrada: arquitectura documentada, `backend/` eliminada
 **Agente:** Claude Code
 **Contexto:** `.ai/ARCHITECTURE.md` ya tenía el diagrama, la estructura de carpetas, las reglas de dependencia y las integraciones externas desde el commit `273a384`, pero `CURRENT_TASK.md` (sin commitear, huérfano de una sesión anterior) marcaba TASK-003 como pendiente. Se revisó a fondo y se detectó que solo faltaban "Flujos principales" y "Rendimiento y escala" con placeholders vacíos.

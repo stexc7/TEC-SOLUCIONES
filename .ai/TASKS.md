@@ -10,7 +10,7 @@
 
 | ID | Tarea | Prioridad | Agente | Rama |
 |----|-------|-----------|--------|------|
-| | | | | |
+| TASK-004 | Adaptar el CI de `.github/workflows/ci.yml` al stack | P1 | Claude Code | `ci/task-004-adaptar-workflow` |
 
 ---
 
@@ -21,7 +21,7 @@
 
 | ID | Tarea | Prioridad | Estimación | Depende de |
 |----|-------|-----------|------------|------------|
-| TASK-004 | Adaptar el CI de `.github/workflows/ci.yml` al stack | P1 | 1 h | TASK-002 |
+| | | | | |
 
 ---
 
@@ -47,7 +47,7 @@
 
 | ID | Tarea | Cerrada | PR |
 |----|-------|---------|-----|
-| TASK-003 | Dibujar la arquitectura en `.ai/ARCHITECTURE.md` | 2026-08-07 | (pendiente de abrir) |
+| TASK-003 | Dibujar la arquitectura en `.ai/ARCHITECTURE.md` | 2026-08-07 | [#2](https://github.com/stexc7/TEC-SOLUCIONES/pull/2) |
 | TASK-002 | Definir el stack en `.ai/STACK.md` | 2026-08-06 | — |
 | TASK-001 | Rellenar `.ai/PROJECT.md` con el proyecto real | 2026-08-06 | — |
 
@@ -60,4 +60,5 @@
 
 | Qué | Dónde | Detectado por | Fecha |
 |-----|-------|---------------|-------|
-| | | | |
+| No hay provider de cobertura instalado (`@vitest/coverage-v8` o similar) ni umbral definido en `.ai/TESTING.md`. El CI corre `npm test` sin `--coverage`. | `frontend/package.json`, `.ai/TESTING.md` | Claude Code | 2026-08-09 |
+| `.ai/TESTING.md` sigue con la plantilla sin rellenar (comandos, herramientas y cobertura en blanco), pese a que Vitest ya está instalado y configurado. | `.ai/TESTING.md` | Claude Code | 2026-08-09 |
