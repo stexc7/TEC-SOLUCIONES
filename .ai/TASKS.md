@@ -10,7 +10,7 @@
 
 | ID | Tarea | Prioridad | Agente | Rama |
 |----|-------|-----------|--------|------|
-| | | | | |
+| TASK-004 | Adaptar el CI de `.github/workflows/ci.yml` al stack | P1 | Claude Code | `ci/task-004-adaptar-workflow` |
 
 ---
 
@@ -21,7 +21,7 @@
 
 | ID | Tarea | Prioridad | Estimación | Depende de |
 |----|-------|-----------|------------|------------|
-| TASK-004 | Adaptar el CI de `.github/workflows/ci.yml` al stack | P1 | 1 h | TASK-002 |
+| | | | | |
 
 ---
 
@@ -60,5 +60,5 @@
 
 | Qué | Dónde | Detectado por | Fecha |
 |-----|-------|---------------|-------|
-| `check-context.ps1` no excluye `frontend/node_modules/`: genera 80 avisos de "enlace roto" que son falsos positivos de READMEs de dependencias, no del proyecto. | `scripts/check-context.ps1` | Claude Code | 2026-08-08 |
-| Hay trabajo de inicialización de Astro ya comiteado y en remoto (rama `feat/inicializar-astro`, 2 commits) sin una tarea correspondiente en este archivo ni en `CURRENT_TASK.md`. Rompe la regla de "una tarea a la vez". | `frontend/` (rama `feat/inicializar-astro`) | Claude Code | 2026-08-08 |
+| No hay provider de cobertura instalado (`@vitest/coverage-v8` o similar) ni umbral definido en `.ai/TESTING.md`. El CI corre `npm test` sin `--coverage`. | `frontend/package.json`, `.ai/TESTING.md` | Claude Code | 2026-08-09 |
+| `.ai/TESTING.md` sigue con la plantilla sin rellenar (comandos, herramientas y cobertura en blanco), pese a que Vitest ya está instalado y configurado. | `.ai/TESTING.md` | Claude Code | 2026-08-09 |
