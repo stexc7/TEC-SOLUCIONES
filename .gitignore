@@ -175,3 +175,6 @@ temp/
 .terraform/
 *.tfstate
 *.tfstate.*
+
+# Astro (tipos generados en cada build)
+frontend/.astro/
